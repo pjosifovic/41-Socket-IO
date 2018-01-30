@@ -4,6 +4,8 @@ const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+const dateFormat = require('dateformat');
+const now = new Date();
 
 require('dotenv').config();
 
@@ -23,7 +25,7 @@ io.on('connection', socket => {
 
   socket.on('send-message', data => {
     data.username = USERS[socket.id].username;
-    data.timestamp = new Date();
+    data.timestamp = dateFormat(now);
     console.log('DATA MESSAGE', data.message);
     io.emit('receive-message', data);
   });
