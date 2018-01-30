@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chat Away</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="/styles.css" />
+</head>
+<body>
+  <h1>Chat Away</h1>
+  <p>This is where chat will happen</p>
+
+  <form id="set-username-form">
+      <input id="username-input" />
+      <button type="submit">save</button>
+  </form>
+
+  <form id="send-message-form">
+    <input id="message-input" />
+    <button type="submit">send</button>
+  </form>
+
+  <div id="messages"></div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/models/chat-message.js"></script>
+<script src="/js/main.js"></script>
+</html>
