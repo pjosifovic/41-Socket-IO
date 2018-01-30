@@ -16,7 +16,6 @@ const USERS = {};
 
 io.on('connection', socket => {
   USERS[socket.id] = {};
-  // add faker name
   USERS[socket.id].username = 'anonymous';
 
   socket.on('disconnect', () => {

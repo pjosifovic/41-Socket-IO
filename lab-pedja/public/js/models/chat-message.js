@@ -2,6 +2,7 @@
 
 class ChatMessage {
   constructor(data){
+    // data,
     this.username = data.username,
     this.message = data.message,
     this.timestamp = data.timestamp
@@ -17,9 +18,15 @@ class ChatMessage {
     timestamp.classList.add('timestamp');
     container.classList.add('message');
 
+    
     timestamp.textContent = this.timestamp;
     message.textContent = this.message;
     username.textContent = this.username + ': ';
+    
+    // if(this.data.socket.id){
+    //   console.log('insinde IF');  
+    //   username.textContent = this.data.socket.id.username;
+    // }
 
     container.appendChild(timestamp);
     container.appendChild(username);
